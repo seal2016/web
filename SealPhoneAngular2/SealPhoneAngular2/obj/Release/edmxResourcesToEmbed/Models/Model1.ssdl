@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBComercialModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CortesProgramados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar(max)" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="HoraInicio" Type="nvarchar" MaxLength="10" />
+    <Property Name="HoraFinalizacion" Type="nvarchar" MaxLength="10" />
+    <Property Name="Descripcion" Type="ntext" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ubicacion" Type="varchar(max)" />
+  </EntityType>
+  <Function Name="SPVisitas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DBComercialModelStoreContainer">
+    <EntitySet Name="CortesProgramados" EntityType="Self.CortesProgramados" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

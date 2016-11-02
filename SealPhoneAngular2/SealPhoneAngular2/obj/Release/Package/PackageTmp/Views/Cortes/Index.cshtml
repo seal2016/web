@@ -1,0 +1,102 @@
+﻿@model Pagination.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Cortes</h5>
+        </div>
+        <div class="ibox-content">
+
+            <p>
+                @Html.ActionLink("Agregar", "Create")
+            </p>
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        Título
+                    </th>
+                    <th>
+                        Fecha
+                    </th>
+                    <th>
+                        Hora Inicio
+                    </th>
+                    <th>
+                        Hora de finalización
+                    </th>
+                    <th>
+                        Descripción
+                    </th>
+                    <th>Usuario</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fecha)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HoraInicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HoraFinalizacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Usuario)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Detalle", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            <!-- pager -->
+            @if (Model.Pager.EndPage > 1)
+            {
+                <ul class="pagination">
+                    @if (Model.Pager.CurrentPage > 1)
+                    {
+                        <li>
+                            <a href="~/Admin/Posts/Index">Primero</a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/Posts/Index?page=@(Model.Pager.CurrentPage - 1)">Anterior</a>
+                        </li>
+                    }
+
+                    @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                    {
+                        <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                            <a href="~/Admin/Posts/Index?page=@page">@page</a>
+                        </li>    }
+
+                    @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                    {
+                        <li>
+                            <a href="~/Admin/Posts/Index?page=@(Model.Pager.CurrentPage + 1)">Siguiente</a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/Posts/Index?page=@(Model.Pager.TotalPages)">Ultimo</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

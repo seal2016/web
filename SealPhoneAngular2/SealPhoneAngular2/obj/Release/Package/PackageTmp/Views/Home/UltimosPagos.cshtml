@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "";
+    Layout = "";
+}
+
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><i class="fa fa-area-chart"></i> Ultimos Pagos</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Suministro</label>
+                <div class="col-lg-10">
+                    <input placeholder="" class="form-control" ng-model="contrato" readonly>
+                </div>
+            </div>
+            <tabs>
+                <pane title="fa fa-list">
+                    <br />
+                    <table class="table table-responsive">
+                        <tbody>
+                            <tr style="color:White;background-color:#1C5E55;font-weight:bold;">
+                                <th scope="col">#</th>
+                                <th scope="col">Periodo</th>
+                                <!--<th scope="col">Codigo Suministro</th>
+                                <th scope="col">Numero Comprobante</th>-->
+                                <th scope="col">Monto Cobrado</th>
+                                <!--<th scope="col">Fecha Pago</th>
+                                <th scope="col">Nombre Contratista</th>-->
+                            </tr>
+                            <tr ng-repeat="x in tabledata" style="background-color:#E3EAEB;">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ x.CodigoPeriodoComercial }}</td>
+                                <!--<td>{{ x.CodigoSuministro }}</td>
+                                <td>{{ x.NumeroComprobante }}</td>-->
+                                <td>{{ x.MontoCobrado }}</td>
+                                <!--<td>{{ x.FechaDigitacion }}</td>
+                                <td>{{ x.NombreContratista }}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </pane>
+                <pane title="fa fa-bar-chart-o">
+                    <br />
+                    <br />
+                    <canvas id="bar" class="chart chart-bar"
+                            chart-data="data" chart-labels="labels">
+                        chart-series="series"
+                    </canvas>
+                </pane>
+            </tabs>
+        </div>
+    </div>
+</div>

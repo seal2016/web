@@ -1,0 +1,60 @@
+﻿@model SealPhoneAngular2.Models.CortesProgramados
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Detalle</h5>
+        </div>
+        <div class="ibox-content">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Titulo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HoraInicio)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HoraInicio)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HoraFinalizacion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HoraFinalizacion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+
+            </dl>
+            <div>
+                @Html.ActionLink("Regresar a Lista", "Index")
+            </div>
+        </div>
+    </div>
+</div>

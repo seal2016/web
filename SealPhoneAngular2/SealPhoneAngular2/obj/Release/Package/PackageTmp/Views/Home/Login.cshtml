@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "";
+}
+
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><i class="fa fa-sign-in"></i> Login</h5>
+        </div>
+        <div class="ibox-content">
+            <form>
+                <div class="form-group">
+                    <label>Nro. de contrato:</label>
+                    <input class="form-control" ng-model="contrato" type="number" placeholder="Solo números">
+                </div>
+                <!--<div class="form-group">
+                    <label>Contraseña: </label>
+                    <input type="password" class="form-control" ng-model="password">
+                </div>      
+                <p>
+                    Su contraseña por defecto es su nro. de contrato 
+                </p>--> 
+                <div class="alert alert-danger" ng-show="diverror" class="hideByDefault">
+                    {{error}}
+                </div>         
+                <button class="btn btn-default" ng-click="login()">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
+

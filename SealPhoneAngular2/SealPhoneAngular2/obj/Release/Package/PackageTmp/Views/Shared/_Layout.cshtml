@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@ViewBag.Title - SEAL</title>
+    <!--Styles.Render("~/Content/css")
+    Styles.Render("~/Content/font-awesome/css")-->
+    <link href="/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Content/bootstrap.css" rel="stylesheet">
+    <link href="/Content/style.css" rel="stylesheet">
+    
+    
+    <!--Scripts.Render("~/bundles/modernizr")-->
+</head>
+<body class="fixed-sidebar mini-navbar">
+    <div id="wrapper">
+
+        <div id="page-wrapper" class="gray-bg" style="margin:0px">
+           
+
+            <div class="row border-bottom" style="background-color:white">
+                <div class="header clearfix">
+                    <nav class="white-bg">
+                        <ul class="pull-right" style="list-style-type: none;margin-bottom: 0px;">
+                            <li><a class="btn btn-primary" href="#/Main" style="margin-top: 7px; margin-right: 10px;"><i class="fa fa-home"></i> </a></li>
+                        </ul>
+                    </nav>
+                    <img src="~/Content/logo_seal.png" class="img-responsive" width="90px" style="margin: 5px 5px 5px 10px;"/>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+                    Iluminando Arequipa
+                </div>
+                <div>
+                    &copy; @DateTime.Now.Year - SEAL
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>

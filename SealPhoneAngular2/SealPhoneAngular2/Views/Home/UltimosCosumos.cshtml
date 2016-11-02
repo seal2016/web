@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "UltimosCosumos";
+    Layout = "";
+}
+<!--CodigoSuministro-->
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><i class="fa fa-area-chart"></i> Ultimos cosumos</h5>             
+        </div>
+        <div class="ibox-content">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Suministro</label>
+                <div class="col-lg-10">
+                    <input placeholder="" class="form-control" ng-model="contrato" readonly>
+                </div>
+            </div>
+            <tabs>
+                <pane title="fa fa-list">
+                    <br />
+                    <table class="table table-responsive">
+                        <tbody>
+                            <tr style="color:White;background-color:#1C5E55;font-weight:bold;">
+                                <th scope="col">#</th>
+                                <th scope="col">Periodo</th>
+                                <!--<th scope="col">Tarifa</th>-->
+                                <th scope="col">Monto(kWh)</th>
+                                <!--<th scope="col">Fecha</th>
+                                <th scope="col">Nro Recibo</th>-->
+                            </tr>
+                            <tr ng-repeat="x in tabledata" style="background-color:#E3EAEB;">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ x.Periodo }}</td>
+                                <!--<td>{{ x.Tarifa }}</td>-->
+                                <td>{{ x.C_EA }}</td>
+                                <!--<td>{{ x.FechaPago }}</td>
+                                <td>{{ x.NroRecibo }}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </pane>
+                <pane title="fa fa-bar-chart-o">
+                    <br />
+                    <br />
+                    <canvas id="bar" class="chart chart-bar"
+                            chart-data="data" chart-labels="labels">
+                        chart-series="series"
+                    </canvas>
+                </pane>
+            </tabs>
+        </div>
+    </div>
+</div>
+

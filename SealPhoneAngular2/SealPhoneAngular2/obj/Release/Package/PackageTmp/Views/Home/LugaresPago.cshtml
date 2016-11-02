@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "LugaresPago";
+    Layout = "";
+}
+
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><i class="fa fa-globe"></i> Lugares de pago</h5>
+        </div>
+        <div class="ibox-content">
+            <ng-map center="{{latlng}}" zoom="16">
+                <marker position="-16.401057, -71.539434" title="Sociedad Electrica de Arequipa Ltda"></marker>
+                <marker position="-16.398017, -71.535994" title="Banco BBVA Continental"></marker>
+                <marker position="-16.389992, -71.546028" title="Banco BBVA Continental - Cayma"></marker>
+                <marker position="-16.402834, -71.517729" title="Banco BBVA Continental - La Negrita"></marker>
+                <marker position="-16.398925, -71.534657" title="Banco Interbank"></marker>
+                <marker position="-16.389631, -71.547012" title="Banco Interbank - Cayma"></marker>
+                <marker position="-16.403333, -71.518315" title="Banco Interbank - La Negrita"></marker>                                                            
+            </ng-map>
+        </div>
+    </div>
+</div>
+
